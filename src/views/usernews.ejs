@@ -1,0 +1,82 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">VSP News</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/news/breaking-news">Breaking News</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/news/sports">Sports</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/entertainment">Entertainment</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/technology">Technology</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/science">Science</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/health">Health</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/nation">Nation</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/world">World</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/news/business">Business</a>
+          </li>
+         
+
+        <li class="nav-item">
+          <div class="user-icon">
+          <a class="nav-link" href="/user"> <i class="dropbtn fas fa-user" style="color: #fff;"></i></a>
+        </div>
+        </li>
+        </ul>
+       
+        <form class="form-inline my-2 my-lg-0" method="POST" action="/news/search">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    </header>
+<div class="wrapper">
+    <div class="news">
+        <% if(news != null){ %>
+
+           <% news.articles.forEach(function(articles,index){ %>
+            <a href="<%- articles.url %>" style="text-decoration: none;"> 
+            <div class="news_card">
+                   <img src="<%- articles.image %>">
+              <h2><%- articles.title %></h2>
+              <p><%- articles.description %></p>
+            </div>
+          </a>
+               <% }) %>
+  <% } else { %>
+   No posts found
+   <% } %>
+    </div>
+</div>

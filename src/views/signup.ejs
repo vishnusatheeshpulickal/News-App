@@ -1,0 +1,52 @@
+<div class="form-modal">
+    
+    <div class="form-toggle">
+        <button id="login-toggle" onclick="toggleLogin()">log in</button>
+        <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+    </div>
+
+    <div id="login-form">
+        <form action="/user/login" method="POST">
+            <input type="text" placeholder="Enter email address"/>
+            <input type="password" placeholder="Enter password"/>
+            <button type="button" class="btn btn-primary login">login</button>
+            <p><a href="javascript:void(0)">Forgotten account</a></p>
+            </form>
+    </div>
+
+    <div id="signup-form">
+        <form action="/user/signup" method="POST">
+            <input type="text" name="name" placeholder="Enter your name"/>
+            <input type="email" name="email" placeholder="Enter your email"/>
+            <input type="password" name="password" placeholder="Create password"/>
+            <input type="password" name="cpassword" placeholder="Confirm password"/>
+            <button type="submit" class="btn btn-primary signup" >create account</button>
+            <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
+            </form>
+    </div>
+
+</div>
+<style>
+ @import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
+
+*{
+    font-family: 'quicksand',Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background:#fff;
+}
+.form-modal button{
+    cursor: pointer;
+    position: relative;
+    text-transform: capitalize;
+    font-size:1em;
+    z-index: 2;
+    outline: none;
+    background:#fff;
+    transition:0.2s;
+}
+</style>
+<script>
+  
+</script>
