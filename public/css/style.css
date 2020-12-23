@@ -251,5 +251,26 @@ a{
 /* user icon */
 .user-icon{
   position: absolute!important; /*Important used only to example. Could be overrated with hierarchy*/
-  right: 310px;
+  right: 220px;
+}
+
+/* horiontal line */
+
+.line-fact {
+
+  text-align: center;
+  border-bottom: 2px solid rgb(13, 59, 211);
+  line-height: 0.3em;
+  margin: 10px 0 20px;
+}
+.line-fact span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

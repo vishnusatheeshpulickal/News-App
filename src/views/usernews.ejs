@@ -37,6 +37,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="/news/nation">Nation</a>
+            
           </li>
 
           <li class="nav-item">
@@ -47,16 +48,49 @@
             <a class="nav-link" href="/news/business">Business</a>
           </li>
          
+         
+          <!-- <div class="dropdown">
+            <button class="dropbtn btn-primary">Language</button>
+              <select class="dropdown-content" name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+              </select>
+              <a href="/news/lang" name="lang" value="ar">Arabic</a>
+              <a href="/news/lang" name="lang" value="ar">German</a>
+              <a href="/news/lang" name="lang" value="ar">Greek</a>
+              <a href="/news/lang" name="lang" value="ar">English</a>
+              <a href="/news/lang" name="lang" value="ar">Spanish</a>
+              <a href="/news/lang" name="lang" value="ar">French</a>
+              <a href="/news/lang" name="lang" value="ar">Hebrew</a>
+              <a href="/news/lang" name="lang" value="ar">Hindi</a>
+              <a href="/news/lang" name="lang" value="ar">Italian</a>
+              <a href="/news/lang" name="lang" value="ar">Japanese</a>
+              <a href="/news/lang" name="lang" value="ar">Malayalam</a>
+              <a href="/news/lang" name="lang" value="ar">Marathi</a>
+              <a href="/news/lang" name="lang" value="ar">Norwegian</a>
+              <a href="/news/lang" name="lang" value="ar">Portuguese</a>
+              <a href="/news/lang" name="lang" value="ar">Romanian</a>
+              <a href="/news/lang" name="lang" value="ar">Russian</a>
+              <a href="/news/lang" name="lang" value="ar">Swedish</a>
+              <a href="/news/lang" name="lang" value="ar">Tamil</a>
+              <a href="/news/lang" name="lang" value="ar">Telugu</a>
+              <a href="/news/lang" name="lang" value="ar">Ukrainian</a>
+              <a href="/news/lang" name="lang" value="ar">Chinese</a>
+          </div> -->
+        
+
 
         <li class="nav-item">
           <div class="user-icon">
-          <a class="nav-link" href="/user"> <i class="dropbtn fas fa-user" style="color: #fff;"></i></a>
+          <a class="nav-link" href="/user"> <i class="fas fa-user" style="color: #fff;"></i></a>
         </div>
         </li>
         </ul>
        
         <form class="form-inline my-2 my-lg-0" method="POST" action="/news/search">
-          <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search" style="width: 120px;">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
@@ -79,4 +113,73 @@
    No posts found
    <% } %>
     </div>
+</div>
+
+<hr class="hr-text" data-content="Interesting Facts">
+
+
+<div class="center">
+ <div class="wrapper">
+  <div class="news">
+    <div class="news_card">
+      <img src="<%- facts.img %>">
+      <h2><%- facts.title %></h2>
+      <p><%- facts.description %></p>
+    </div>
+  </div>
+ </div>
+</div>
+<style>
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+}
+.hr-text:before {
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#818078), to(transparent));
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #fcfcfa;
+}
+
+</style>
+
+<!-- 
+<div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget"></div>
+
+<script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script> -->
+
+<!-- corona result -->
+
+<div class="card horizontal">
+  <div class="card-image">
+    <img src="https://lorempixel.com/100/190/nature/6">
+  </div>
+  <div class="card-stacked">
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information.</p>
+    </div>
+    <div class="card-action">
+      <a href="#">This is a link</a>
+    </div>
+  </div>
 </div>
