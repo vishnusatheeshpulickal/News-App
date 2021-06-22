@@ -35,7 +35,6 @@ router.get('/',async(req,res)=>{
 router.get('/news/sports',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=sports&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -59,7 +58,6 @@ router.get('/news/sports',async(req,res)=>{
 router.get('/news/business',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=business&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -83,7 +81,6 @@ router.get('/news/business',async(req,res)=>{
 router.get('/news/entainment',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=entertainment&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -107,7 +104,6 @@ router.get('/news/entainment',async(req,res)=>{
 router.get('/news/technology',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=technology&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -131,7 +127,6 @@ router.get('/news/technology',async(req,res)=>{
 router.get('/news/health',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=health&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -155,7 +150,6 @@ router.get('/news/health',async(req,res)=>{
 router.get('/news/science',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=science&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -179,7 +173,6 @@ router.get('/news/science',async(req,res)=>{
 router.get('/news/world',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=world&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -203,7 +196,6 @@ router.get('/news/world',async(req,res)=>{
 router.get('/news/nation',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=nation&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -227,7 +219,6 @@ router.get('/news/nation',async(req,res)=>{
 router.get('/news/breaking-news',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=breaking-news&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -251,7 +242,6 @@ router.get('/news/breaking-news',async(req,res)=>{
 router.get('/news/entertainment',async(req,res)=>{
   try{
        const newsAPI = await axios.get(`https://gnews.io/api/v4/top-headlines?&token=${process.env.APIKEY}&topic=entertainment&lang=${lang}`) 
-       console.log(newsAPI.data)
        await res.render('usernews',{ news : newsAPI.data,facts })
   }catch(err){
     if(err) return res.status(404).render('404error')
@@ -275,7 +265,6 @@ router.get('/news/entertainment',async(req,res)=>{
 router.post("/news/search",async(req,res)=>{
   try{
     const newsAPI = await axios.get(`https://gnews.io/api/v4/search?q="${req.body.search}"&token=${process.env.APIKEY}&lang=${lang}`)  
-    console.log(newsAPI.data)
     await res.render('usernews',{ news : newsAPI.data,facts })
 }catch(err){
  if(err) return res.status(404).render('404error')
@@ -300,24 +289,6 @@ router.get("/news/lang",(req,res)=>{
 console.log(req.body.lang)
 })
 
-// signup
-router.get("/user/signup",(req,res)=>{
-  res.render("signup")
-   const{name,email,password,cpassword}=req.body;
-   const {error}=signupValidation(req.body);
-   
-})
-
-
-// signup validation
-function signupValidation(signup){
-  const schema = Joi.object({
-   name:Joi.string().min(3).max(30).required(),
-   email:Joi.string().pattern(new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)).required(),
-   password:Joi.string().min(6).max(20).required(),
-   cpassword:Joi.string().equal(Joi.ref('password')).message("password doesn't match")
-  })
-}
 
 module.exports = router;
 
